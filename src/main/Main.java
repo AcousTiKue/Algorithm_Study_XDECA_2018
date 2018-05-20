@@ -10,7 +10,7 @@
 	 ** 
  * */
 
-package test;
+package main;
 
 public class Main {
     
