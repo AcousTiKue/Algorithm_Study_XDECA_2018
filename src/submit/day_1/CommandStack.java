@@ -6,8 +6,8 @@
 	** Change Log : First written '18.05.21.
     ** File Info : https://www.acmicpc.net/problem/10828
     **     Input: push X, pop, size, empty, top
-	**	    Output: Result of execution of each commands.
-	** 
+    **	    Output: Result of execution of each commands.
+    ** 
  * */
 
 package submit.day_1;
