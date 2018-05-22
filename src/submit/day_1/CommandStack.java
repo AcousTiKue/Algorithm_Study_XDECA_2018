@@ -12,7 +12,8 @@
 
 package submit.day_1;
 
-import java.util.Stack;
+// import com.sun.org.apache.xerces.internal.util.IntStack;
+import java.util.*;
 
 
 
@@ -20,11 +21,12 @@ import java.util.Stack;
 public class CommandStack {
 
 	/* Data field */
-	private Stack SingleStack = new Stack(); // Default
+	private Stack<Integer> SingleStack = new Stack<>(); // Default
+        // This stack stacks int-type wrapper.
     
 	private enum Command { 
         PUSH, POP, SIZE, EMPTY, TOP, UNKNOWN
-    };
+    }
     
     
 	{	
@@ -54,9 +56,18 @@ public class CommandStack {
         System.out.println(SingleStack.size());
     }
     
+    private final void isStackEmpty() {
+        
+        if(SingleStack.isEmpty())
+            System.out.println("1");
+        
+        else
+            System.out.println("0");
+    }
+    
     private final void topOfStack() {
         
-        System.out.println(SingleStack.lastElement());
+        System.out.println(SingleStack.peek());
     }
     
     private final void unknownCommand() {
@@ -67,7 +78,7 @@ public class CommandStack {
     
     
     
-    // Interface
+    // User-Interface
     // Command encCommand(String)
     public Command encCommand(String argCommand_) { // "Command Encoder"
         // This function returns UNKNOWN if command is not found.
@@ -87,36 +98,40 @@ public class CommandStack {
         return Command.UNKNOWN;
     }
     
+    
     // void lnkCommand(Command)
-    public void lnkCommand(Command argCommand_) { // "Command linker"
+    public void lnkCommand(Command argCommand_, String argCommandOrg_) { // "Command linker"
         // This function simply links the command, with the results created from encCommand() function.
         
         switch(argCommand_) {
                 
             case PUSH: {
-                
+                // Process below parses string to get the value of integer.
+                pushToStack(Integer.valueOf(argCommandOrg_.substring(5)));
                 break;
             }
                 
             case POP: {
                 
+                this.popFromStack();
                 break;
             }
                 
             case SIZE: {
                 
+                this.stackSize();
                 break;
             }
                 
             case EMPTY: {
                 
+                this.isStackEmpty();
                 break;
             }
                 
             case TOP: {
              
                 this.unknownCommand();
-                
                 break;
             }
         }
