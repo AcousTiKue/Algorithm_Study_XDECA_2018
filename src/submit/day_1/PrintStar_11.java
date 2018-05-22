@@ -1,17 +1,14 @@
 /*
-	 ** 
-	 ** Theme		|	[XDeca] Algorithm Study 
-	 ** Author		|	KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-	 ** Environment	|	Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
-	 **				|	Java
-	 ** Change Log	|	First written '18.05.18.
-	 ** File Info	|	
-	 **				|
-	 **				|	https://www.acmicpc.net/problem/2448
-	 **				|	Input: N is given at the first row. N should be an integer of 3*2^k form, where k <= 10.
-	 **				|	Output: Print out stars of N rows.
-	 **				|
-	 ** 
+** 
+** Theme : [XDeca] Algorithm Study 
+** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
+** Environment : Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
+** Change Log : First written '18.05.18.
+** File Info : 
+** https://www.acmicpc.net/problem/2448
+** Input: N is given at the first row. N should be an integer of 3*2^k form, where k <= 10.
+** Output: Print out stars of N rows.
+** 
  * */
 
 /*

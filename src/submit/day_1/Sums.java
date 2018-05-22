@@ -1,18 +1,15 @@
 /*
-	 ** 
-	 ** Theme		|	[XDeca] Algorithm Study 
-	 ** Author		|	KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-	 ** Environment	|	Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
-	 **				|	Java
-	 ** Change Log	|	First written '18.05.17.
-	 ** File Info	|	https://www.acmicpc.net/problem/11720
-	 **				|
-	 **				|	Inputs: 'N' at the first row. 
-	 **				|		In the second row, arbitrary numbers will listed.
-	 **				|	Outputs: The sum of numbers input is accumulated.
-	 **				|
-	 ** 
- * */
+** 
+** Theme : [XDeca] Algorithm Study 
+** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
+** Environment : Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
+** Change Log : First written '18.05.18.
+** File Info : https://www.acmicpc.net/problem/11720
+** Inputs: 'N' at the first row. 
+** In the second row, arbitrary numbers will listed.
+** Outputs: The sum of numbers input is accumulated.
+** 
+** */
 
 package submit.day_1;
 

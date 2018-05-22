@@ -1,20 +1,17 @@
 /*
-	 ** 
-	 ** Theme		|	[XDeca] Algorithm Study 
-	 ** Author		|	KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-	 ** Environment	|	Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
-	 **				|	Java
-	 ** Change Log	|	First written '18.05.18.
-	 ** File Info	|	This file does nothing but gives some guidance for head comments. 
-	 **				|
-	 **				|	https://www.acmicpc.net/problem/4344
-	 **				|	Input: Test case 'C' is given at the first row.
-	 **				|		From the second row, the number of students is given as a first input,
-	 **				|		and the rest will be the each score.
-	 **				|	Output: Print the percentage of students who have scores above the average.
-	 **				|
-	 ** 
- * */
+** 
+** Theme : [XDeca] Algorithm Study 
+** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
+** Environment : Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
+** Change Log : First written '18.05.18.
+** File Info : 
+** https://www.acmicpc.net/problem/4344
+** Input: Test case 'C' is given at the first row.
+** From the second row, the number of students is given as a first input, and the rest will be the each score.
+** Output: Print the percentage of students who have scores above the average.
+**				|
+** 
+** */
 
 package submit.day_1;
 

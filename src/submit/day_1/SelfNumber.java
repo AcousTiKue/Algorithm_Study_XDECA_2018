@@ -1,18 +1,16 @@
 /*
-	 ** 
-	 ** Theme		|	[XDeca] Algorithm Study 
-	 ** Author		|	KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-	 ** Environment	|	Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
-	 **				|	Java
-	 ** Change Log	|	First written '18.05.18.
-	 ** File Info	|	This file does nothing but gives some guidance for head comments. 
-	 **				|
-	 **				|	https://www.acmicpc.net/problem/4673
-	 **				|	Input: None
-	 **				|	Output: Print out self-numbers less than 10,000, in sql terms of 'order by asc'.
-	 **				|
-	 ** 
- * */
+** 
+** Theme : [XDeca] Algorithm Study 
+** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
+** Environment : Windows 10 Professional, Eclipse-Oxygen, Java JDK 10.0.1
+** Change Log : First written '18.05.18.
+** File Info : 
+** https://www.acmicpc.net/problem/4673
+** Input: None
+** Output: Print out self-numbers less than 10,000, in sql terms of 'order by asc'.
+**	
+** 
+** */
 
 /*
  * The problem of self-number was first written C++ last year, 

@@ -8,7 +8,7 @@
 **     Input: push X, pop, size, empty, top
 **     Output: Result of execution of each commands.
 ** 
- * */
+** */
 
 package submit.day_1;
 
