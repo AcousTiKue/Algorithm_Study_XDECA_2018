@@ -23,6 +23,11 @@ public class Parentheses {
         
         private String Data = "";
         
+        private int Left = 0;
+        private int Right = 0;
+        
+        private boolean State = false; // Default
+        
         {
             /* Nothing needs to be done ahead before calling constructor */
         }
@@ -40,7 +45,27 @@ public class Parentheses {
         
         
         // Engine
-        
+        private boolean isVPS() {
+            
+            if(Data.charAt(0) != '(')
+                    return false;
+            
+            if(Data.charAt(Data.length() - 1) != ')')
+                    return false;
+            
+            for(int i = 0; i < Data.length(); i++) {
+                    
+                if(Data.charAt(i) == '(')
+                    Right++;
+                
+                else 
+                    Left++;
+            }
+            
+            if(Left == Right) return true;
+            
+            else return false;
+        }
         
         
         
@@ -50,22 +75,56 @@ public class Parentheses {
         public void setData(String argString_) {
             
             this.Data = argString_;
+            
+            State = isVPS();
         }
         
         public String getData() {
             
             return this.Data;
         }
+        
+        public boolean getState() {
+            
+            State = isVPS();
+            
+            return this.State;
+        }
     }
        
     
+    private int TestCase = 0;
+    private ParenthesisString[] Cases = null;
     
+    {   
+         /* Nothing needs to be done ahead before calling constructor */
+    }
     
+    public Parentheses() {
+        
+    }
     
+    public Parentheses(int argTestCase_) {
+        
+        Cases = new ParenthesisString[argTestCase_];
+    }
     
+    /* Setters */
+    public void setCases(ParenthesisString[] argCases_) {
+        
+        for(int i = 0; i < TestCase; i++) {
+            
+            Cases[i] = argCases_[i];
+        }
+    }
     
-    
-    
-    
-    
+    public boolean[] isEachVPS() {
+        
+        boolean[] Set_ =  new boolean[TestCase];
+        
+        for(int i = 0; i < TestCase; i++) 
+            Set_[i] = Cases[i].getState();
+        
+        return Set_;
+    }
 }
