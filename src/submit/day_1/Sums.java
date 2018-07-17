@@ -40,12 +40,17 @@ public class Sums {
 	 *  */
 	public void setInput() {
 		
+        String InputString_ = "";
+
 		Scanner Scan_ = new Scanner(System.in);
 		
+        InputString_ = Scan_.next();
+
+        Integer.valueOf(InputString_.substring(0, 1));
+
 		for(int i = 0; i < 100; i++) {
-			
-			Input[i] = Scan_.nextInt();
-		
+            
+            Input[i] = Integer.valueOf(InputString_.substring(0 + i, 1 + i));
 			Sum += Input[i];
 		}
 		
