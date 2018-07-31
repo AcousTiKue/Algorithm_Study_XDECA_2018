@@ -1,51 +1,39 @@
-/*
-** 
-** Theme : [Operations Information & Communications Wing] LINK Algorithm Contest
-** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-** Environment : Ubuntu LTS 14.06.
-** Change Log : First written '18.07.28.
-** File Info : 
-** Input: 
-** Output: 
-** 
-** */
+// [Link] Algorithm Study
+// Environment: Windows 7 32-bit, Visual Studio Professional 2013, VS2010 Platform Tool
+// Author: Air Force Operations Information & Communication Wing, KTMO-Cell S/W Support, SukJoon Oh
+// Version: Experimental
+// File: DFS.h
 
-#define _DFS
-#define _VECTOR
+#define _DEBUG
 
-#ifdef _DFS
-
-//#include <memory>
 #include <vector>
+#include <queue>
 #include <functional>
+
+// #include <exception>
+
+#include <iostream>
+
 
 namespace _jcode {
 	
-	class DFS {
+	/* std::vector<std::vector<int>> makeGraph(); */
+	std::vector<std::vector<int>> makeGraph();
+	
+	class Dfs final {
 	private:
-		/* Field */
-		std::vector<std::vector<int>>& Graph_;			
+		std::vector<std::vector<int>> Graph_;	
 		
-		/* Member functions */
-		bool doDfs() = delete;
-
 	public:
 		/* Constructor & Destructor */
-		DFS(std::vector<std::vector<int>> argrGraph_) : Graph_(argrGraph_) {};
-		virtual ~DFS();
-
+		Dfs(std::vector<std::vector<int>>&);
+		
+		virtual ~Dfs();
+		
 		/* Interface */
-			// Getter & Setter
-		std::vector<std::vector<int>>& getGraph() const;
-		void setGraph(std::vector<std::vector<int>>&); 
+		// Getter
+		std::vector<std::vector<int>> getGraph() const;
 		
-		/* Util */
-		void doDfsBy(int, std::function<void(int)>);
-		
-		
-		
-	};
-	
+		std::queue<int> runDfs(int, std::function<void(int, int)> = std::function<void(int, int)>(0)) const;
+	};	
 };
-
-#endif

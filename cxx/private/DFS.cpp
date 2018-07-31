@@ -1,58 +1,93 @@
-/*
-** 
-** Theme : [Operations Information & Communications Wing] LINK Algorithm Contest
-** Author : KTMO-Cell S/W Supporter(~'19), SukJoon Oh
-** Environment : Ubuntu LTS 14.06.
-** Change Log : First written '18.07.28.
-** File Info : 
-** Input: 
-** Output: 
-** 
-** */
-
-#define _DFS
-
-#ifdef _DFS
+// [Link] Algorithm Study
+// Environment: Windows 7 32-bit, Visual Studio Professional 2013, VS2010 Platform Tool
+// Author: Air Force Operations Information & Communication Wing, KTMO-Cell S/W Support, SukJoon Oh
+// Version: Experimental
+// File: DFS.cpp
 
 #include "DFS.h"
 
-/* Constructor & Destructor */
-_jcode::DFS::~DFS() { };
+#define _LINUX
 
-/* Interface */
-// Getter
-std::vector<std::vector<int>>& _jcode::DFS::getGraph() const {
+/* Global function */
+std::vector<std::vector<int>> _jcode::makeGraph() {
+	
+	int Size_;
+	std::vector<std::vector<int>> Graph_;
+	
+	std::cin >> Size_;
+	
+	for(int itor_ = 0; itor_ < Size_; itor_++) 
+		Graph_.push_back(std::vector<int>(Size_, 0));
+	
+	for(int itorRow_ = 0; itorRow_ < Size_; itorRow_++) 
+		for(int itorCols_ = 0; itorCols_ < Size_; itorCols_++) 
+			Graph_[itorRow_][itorCols_];
+	
+	return Graph_;
+};
+
+
+/* Constructor & Destructor */
+// Constructor
+_jcode::Dfs::Dfs(std::vector<std::vector<int>>& argrGraph_) : Graph_(argrGraph_) {
+#ifdef _DEBUG
+	std::cout << "Dfs::Dfs()" << std::endl;
+#endif	
+};
+
+// Destructor
+_jcode::Dfs::~Dfs() {
+#ifdef _DEBUG
+	std::cout << "Dfs::~Dfs()" << std::endl;
+#endif			
+};
+
+
+std::vector<std::vector<int>> _jcode::Dfs::getGraph() const {
+#ifdef _DEBUG
+	std::cout << "Dfs::getGraph()" << std::endl;
+#endif		
 	
 	return this->Graph_;
 };
 
-// Setter
-void _jcode::DFS::setGraph(std::vector<std::vector<int>>& argrGraph_) {
-	
-	this->Graph_ = argrGraph_;
-};
 
-/* Util */
-void _jcode::DFS::doDfsBy(int argSrcNode_, std::function<void(int)> recordFunction) {
+/* Interface */
+std::queue<int> _jcode::Dfs::runDfs(int argvSrcNode_, std::function<void(int, int)> userDefinedRecordFunction) const {
+#ifdef _DEBUG
+	std::cout << "Dfs::runDfs()" << std::endl;
+#endif	
 	
-	std::vector<bool> isVisited_(Graph_.size());
+	std::vector<bool> isVisited_(Graph_.size(), false);
+	std::queue<int> Route_;
 	
-	std::function<void(bool)> doDfs = [&](int argV_) { // argV_ should be starting node.
+	std::function<void(int)> DFS = [&](int argvSrc_) {
 		
-		isVisited_[argV_] = true;
+		isVisited_.at(argvSrc_) = true;
 		
-		for(auto itor_ = 1; itor_ < Graph_[argV_].size(); itor_++) {
+		for(unsigned itor_ = 0; itor_ < Graph_.size(); itor_++) {
 			
-			if(Graph_[argV_][itor_] != 0 && !isVisited_[itor_]) {
-
-				recordFunction(itor_);				
-				doDfs(itor_);
+			if(Graph_[argvSrc_][itor_] != 0 && !isVisited_[itor_]) {
+#ifdef _DEBUG
+				std::cout << "	> Moving from "<< argvSrc_ << " to " << itor_ << std::endl;
+#endif				
+				Route_.push(argvSrc_);
+				
+#ifdef _LINUX
+				userDefinedRecordFunction(argvSrc_, itor_); // recording
+#elif
+				if(!userDefinedRecordFunction._Empty())
+					userDefinedRecordFunction(argvSrc_, itor_); // recording
+#endif
+				
+				DFS(itor_);
 			}
 		}
 	};
 	
-	doDfs(argSrcNode_);
+	DFS(argvSrcNode_);
+	
+	return Route_;
 };
 
 
-#endif
